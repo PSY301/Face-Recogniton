@@ -1,16 +1,6 @@
 # Face Recognition
 ## introduction
-It is a face recognition library that can accurately predict from 3 or less initial photos. I will explain how the model learns and predict.
-### Model training
-1. The program creates folders dataSets and trainers. In the future, the dataSets folder will store training images of people, and the trainers folder will contain the database for determining the name of the predicted person by id and will contain the trained model.
-2. The program creates in the folders dataSets and trainers a project (folder) in which you will work.
-3. The program receives training images with names of people on them, creates folders for each person, copies training images there and augments each photo in each folder. The name of the folder is the id of the person. To determine the name of a person by his id, the program creates a database.
-4. The program detects faces in each training image using facenet, obtains their embeddings and, using the SVD algorithm, trains a model on them and stores it.
-### Face recognition 
-1. The program gets an image with an as yet unidentified face.
-2. The program gets the faces in the image and rectangles them.
-3. The model recognizes a person's face in the image, gets that person's name from the database and writes it at the bottom of the box.
-4. The program shows or saves the finished image in the same folder.
+It is a face recognition library that can accurately predict from 3 or less initial photos. The number of people to detect can be increased by changing the classification algorithm. The method of detection as well as obtaining face tokens is based on facenet model. The tokens are subsequently categorized using svd.
 ## Installing 
 To install the library you need to type this command in the command line:
 ```python
@@ -21,10 +11,7 @@ This library use site-packages like: opencv-python, scikit-learn, facenet_pytorc
 pip install requirements.txt
 ```
 ## Example of working
-1. Import library.
-2. Create your project.
-3. Add images of people to train model.
-4. Train model.
+This is an example of basic project creation, with adding a new user, training a model on it and then using it:
 ```python
 # Import library.
 import face_rec.faceRec
